@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE package SYSTEM "../pear/package.dtd">
+<package>
+ <name>exifkit</name>
+ <summary>Improved EXIF capabilities</summary>
+ <maintainers>
+  <maintainer>
+   <user>kalle</user>
+   <name>Kalle Sommer Nielsen</name>
+   <email>kalle@php.net</email>
+   <role>lead</role>
+  </maintainer>
+ </maintainers>
+ <description>
+EXIFKit integrates itself with libexif to provide its capabilities 
+to PHP. This is a much improved version over the standard EXIF 
+extension that comes with the standard PHP package.
+ </description>
+ <license>PHP</license>
+ <release>
+  <state>beta</state>
+  <version>1.0.0a1</version>
+  <date>2017-07-15</date>
+  <notes>
+Initial release
+  </notes>
+  <filelist>
+   <file role="doc" name="CREDITS"/>
+   <file role="src" name="config.w32"/>
+   <file role="src" name="exifkit.c"/>
+   <file role="src" name="php_exifkit.h"/>
+  </filelist>
+  <deps>
+   <dep type="php" rel="ge" version="7" />
+  </deps>
+ </release>
+</package>
+<!--
+vim:et:ts=1:sw=1
+-->

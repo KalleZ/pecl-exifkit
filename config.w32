@@ -1,0 +1,19 @@
+// $Id$
+// vim:ft=javascript
+
+ARG_ENABLE('exifkit', 'EXIFKit support', 'no');
+
+if(PHP_EXIFKIT != 'no')
+{
+	AC_DEFINE('HAVE_EXIFKIT', 1, 'Have EXIFKit Support');
+
+	AC_DEFINE('LIBEXIF_VERSION', '2.4.2', 'Libexif version');
+
+	EXTENSION('exifkit', 'exifkit.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 /I"../pecl/exifkit" /I"../pecl/exifkit/libexif"');
+
+	ADD_SOURCES('../pecl/exifkit/libexif', 'exif-byte-order.c exif-content.c exif-data.c exif-entry.c exif-format.c exif-ifd.c exif-loader.c exif-log.c exif-mem.c exif-mnote-data.c exif-tag.c exif-utils.c', 'exifkit');
+	ADD_SOURCES('../pecl/exifkit/libexif/canon', 'exif-mnote-data-canon.c mnote-canon-entry.c mnote-canon-tag.c', 'exifkit');
+	ADD_SOURCES('../pecl/exifkit/libexif/fuji', 'exif-mnote-data-fuji.c mnote-fuji-entry.c mnote-fuji-tag.c', 'exifkit');
+	ADD_SOURCES('../pecl/exifkit/libexif/olympus', 'exif-mnote-data-olympus.c mnote-olympus-entry.c mnote-olympus-tag.c', 'exifkit');
+	ADD_SOURCES('../pecl/exifkit/libexif/pentax', 'exif-mnote-data-pentax.c mnote-pentax-entry.c mnote-pentax-tag.c', 'exifkit');
+}
