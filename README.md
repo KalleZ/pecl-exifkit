@@ -21,6 +21,11 @@ To compile this into your PHP installation, you need to compile PHP with `config
 
 ## API Reference
 
+The following constants are available once this extension is loaded:
+
+ * `EXIFKIT_BYTEORDER_MOTOROLA`: Motorola byte order, see the `COMPUTED` section in the `exifkit_read_data()` function block below
+ * `EXIFKIT_BYTEORDER_INTEL`: Intel byte order, see the `COMPUTED` section in the `exifkit_read_data()` function block below
+
 The following function are available once this extension is loaded:
 
 ```
@@ -46,8 +51,8 @@ The `exifkit_read_data()` function reads all tags and returns them. Tags are ret
 
  The `COMPUTED` section contains computed information regarding the EXIF data found in the header. Currently the following can be returned in the `COMPUTED` section:
 
- * `ByteOrder`: The numeric byte order value
- * `ByteOrderName`: The name of the byte order. This can either be `Motorola`, `Intel` or `<Default>`.
+ * `ByteOrder`: The numeric byte order value. This value can be compared against `EXIFKIT_BYTEORDER_MOTOROLA` and `EXIFKIT_BYTEORDER_INTEL`.
+ * `ByteOrderName`: The name of the byte order. This can either be `Motorola` or `Intel`
 
 ## Contributing
 

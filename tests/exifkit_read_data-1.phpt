@@ -3,7 +3,7 @@ exifkit_read_data() Test 1
 --SKIPIF--
 <?php
 	if (!extension_loaded('exifkit')) {
-		print('skip: exif extension not available');
+		print('skip: exifkit extension not available');
 	}
 ?>
 --FILE--

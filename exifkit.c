@@ -45,6 +45,20 @@ const zend_function_entry exifkit_functions[] = {
 };
 /* }}} */
 
+/* {{{ PHP_MINIT_FUNCTION
+ */
+# define EXIFKIT_CONST_LONG(_name, _value) \
+	REGISTER_LONG_CONSTANT(_name, _value, CONST_CS | CONST_PERSISTENT);
+
+PHP_MINIT_FUNCTION(exifkit)
+{
+	EXIFKIT_CONST_LONG("EXIFKIT_BYTEORDER_MOTOROLA", EXIF_BYTE_ORDER_MOTOROLA);
+	EXIFKIT_CONST_LONG("EXIFKIT_BYTEORDER_INTEL", EXIF_BYTE_ORDER_INTEL);
+
+	return SUCCESS;
+}
+/* }}} */
+
 /* {{{ PHP_MINFO_FUNCTION
  */
 PHP_MINFO_FUNCTION(exifkit)
@@ -70,7 +84,7 @@ zend_module_entry exifkit_module_entry = {
 	STANDARD_MODULE_HEADER,
 	"exifkit",
 	exifkit_functions,
-	NULL, 
+	PHP_MINIT(exifkit), 
 	NULL,
 	NULL,
 	NULL,
@@ -157,12 +171,11 @@ static void exifkit_add_computed_section(zval *rv, ExifData *data)
 {
 	zval zv;
 	ExifByteOrder byte_order = exif_data_get_byte_order(data);
-	const char *byte_order_name = exif_byte_order_get_name(byte_order);
 
 	array_init(&zv);
 
 	add_assoc_long(&zv, "ByteOrder", byte_order);
-	add_assoc_string(&zv, "ByteOrderName", (byte_order_name ? byte_order_name : "<Default>"));
+	add_assoc_string(&zv, "ByteOrderName", exif_byte_order_get_name(byte_order));
 
 	add_assoc_zval(rv, exifkit_get_section_name(EXIFKIT_SECTION_COMPUTED), &zv);
 }

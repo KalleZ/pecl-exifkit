@@ -3,7 +3,7 @@ Bug #72819 (EXIF thumbnails not read anymore)
 --SKIPIF--
 <?php
 	if (!extension_loaded('exifkit')) {
-		print('skip: exif extension not available');
+		print('skip: exifkit extension not available');
 	}
 ?>
 --FILE--
