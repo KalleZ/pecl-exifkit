@@ -4,7 +4,7 @@
 
 ## Dependencies
 
-Libexif is required, and bundled. Libexif is slightly modified in order to compile. Below is the changes made to make `libexif` compile:
+`libexif` is required (and bundled). `libexif` is slightly modified in order to compile. Below is the changes made to make `libexif` compile:
 
  * The bundled library is version 2.5.2pre1
  * A `config.h` file is included in the root of the library folder
