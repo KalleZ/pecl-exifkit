@@ -29,6 +29,26 @@ function exifkit_thumbnail(string $file) : string|bool
 
 The `exifkit_thumbnail()` function works exactly like the `exif_thumbnail()` function, it returns a string with the thumbnail data and if an error should occur, it will return false. 
 
+```
+function exifkit_read_data(string $file [, bool $thumbnail = false ]) : array|bool
+```
+
+The `exifkit_read_data()` function reads all tags and returns them. Tags are returned in their respective sections. The following sections can be returned:
+
+ * `IFD0`
+ * `IFD1`
+ * `EXIF`
+ * `GPS`
+ * `INTEROP`
+ * `COMPUTED`
+ * `THUMBNAIL` (Not implemented yet)
+ * `MAKERNOTE` (Not implemented yet)
+
+ The `COMPUTED` section contains computed information regarding the EXIF data found in the header. Currently the following can be returned in the `COMPUTED` section:
+
+ * `ByteOrder`: The numeric byte order value
+ * `ByteOrderName`: The name of the byte order. This can either be `Motorola`, `Intel` or `<Default>`.
+
 ## Contributing
 
 Should you find this extension interesting in anyway, you are welcome to contribute in anyway possible by submitting reports and pull requests.

@@ -25,8 +25,18 @@
 # define PHP_EXIFKIT_VERSION "1.0.0 Alpha 1"
 
 extern zend_module_entry exifkit_module_entry;
-#define phpext_exifkit_ptr &exifkit_module_entry
+# define phpext_exifkit_ptr &exifkit_module_entry
+
+# define EXIFKIT_SECTION_IFD_0			EXIF_IFD_0
+# define EXIFKIT_SECTION_IFD_1			EXIF_IFD_1
+# define EXIFKIT_SECTION_EXIF			EXIF_IFD_EXIF
+# define EXIFKIT_SECTION_GPS			EXIF_IFD_GPS
+# define EXIFKIT_SECTION_INTEROP		EXIF_IFD_INTEROPERABILITY
+/* # define EXIFKIT_SECTION_THUMBNAIL		(1 << 5) */
+/* # define EXIFKIT_SECTION_MAKER		(1 << 6) */
+# define EXIFKIT_SECTION_COMPUTED		(1 << 7)
 
 PHP_FUNCTION(exifkit_thumbnail);
+PHP_FUNCTION(exifkit_read_data);
 
 #endif
