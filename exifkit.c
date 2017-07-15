@@ -94,13 +94,14 @@ PHP_FUNCTION(exifkit_thumbnail)
 		data = exif_loader_get_data(loader);
 
 		exif_loader_unref(loader);
-		loader = NULL;
 
 		if (!data) {
 			RETURN_FALSE;
 		}
 
-		RETURN_STRINGL(data->data, data->size);
+		RETVAL_STRINGL(data->data, data->size);
+
+		exif_data_unref(data);
 	} else {
 		php_error_docref(NULL, E_WARNING, "Unable to load libexif");
 	}
