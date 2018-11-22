@@ -21,21 +21,21 @@ To compile this into your PHP installation, you need to compile PHP with `config
 
 ## API Reference
 
-The following constants are available once this extension is loaded:
+### Constants
 
  * `EXIFKIT_BYTEORDER_MOTOROLA`: Motorola byte order, see the `COMPUTED` section in the `exifkit_read_data()` function block below
  * `EXIFKIT_BYTEORDER_INTEL`: Intel byte order, see the `COMPUTED` section in the `exifkit_read_data()` function block below
 
-The following function are available once this extension is loaded:
+### Functions
 
 ```
-function exifkit_thumbnail(string $file) : string|bool
+function exifkit_thumbnail(string $file) : string | bool
 ```
 
 The `exifkit_thumbnail()` function works exactly like the `exif_thumbnail()` function, it returns a string with the thumbnail data and if an error should occur, it will return false. 
 
 ```
-function exifkit_read_data(string $file [, bool $thumbnail = false ]) : array|bool
+function exifkit_read_data(string $file [, bool $thumbnail = false ]) : array | bool
 ```
 
 The `exifkit_read_data()` function reads all tags and returns them. Tags are returned in their respective sections. The following sections can be returned:
