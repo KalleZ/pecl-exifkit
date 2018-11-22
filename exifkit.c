@@ -51,7 +51,7 @@ const zend_function_entry exifkit_functions[] = {
 	REGISTER_LONG_CONSTANT(_name, _value, CONST_CS | CONST_PERSISTENT);
 
 # define EXIFKIT_CONST_STR(_name, _value) \
-	REGISTER_STRING(_name, _value, CONST_CS | CONST_PERSISTENT);
+	REGISTER_STRING_CONSTANT(_name, _value, CONST_CS | CONST_PERSISTENT);
 
 PHP_MINIT_FUNCTION(exifkit)
 {
