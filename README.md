@@ -23,6 +23,7 @@ To compile this into your PHP installation, you need to compile PHP with `config
 
 ### Constants
 
+ * `EXIFKIT_LIBVER`: The libexif version used to compile pecl/exifkit
  * `EXIFKIT_BYTEORDER_MOTOROLA`: Motorola byte order, see the `COMPUTED` section in the `exifkit_read_data()` function block below
  * `EXIFKIT_BYTEORDER_INTEL`: Intel byte order, see the `COMPUTED` section in the `exifkit_read_data()` function block below
 
