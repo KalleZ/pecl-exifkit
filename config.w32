@@ -7,7 +7,7 @@ if(PHP_EXIFKIT != 'no')
 {
 	AC_DEFINE('HAVE_EXIFKIT', 1, 'Have EXIFKit Support');
 
-	AC_DEFINE('LIBEXIF_VERSION', '2.4.2', 'Libexif version');
+	AC_DEFINE('LIBEXIF_VERSION', '2.4.5pre1', 'Libexif version');
 
 	EXTENSION('exifkit', 'exifkit.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 /I"../pecl/exifkit" /I"../pecl/exifkit/libexif"');
 
